@@ -1,0 +1,16 @@
+extends layout
+block content
+    h1 ID: #{bookinstance._id}
+
+    p #[strong Title:]
+        a(href=bookinstance.book.url) #{bookinstance.book.title}
+    p #[strong Imprint:] #{bookinstance.imprint}
+
+    h3 Do you really want to delete this copies
+
+    form(method='post' action='')
+        .form-group
+            input#instanceid.form-control(type='hidden', name='instanceid', require='true',value=bookinstance._id)
+        button.btn.btn-primary(type='submit') Delete
+    
+
